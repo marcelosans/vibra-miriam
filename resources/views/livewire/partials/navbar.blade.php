@@ -24,7 +24,7 @@
                       </button>
                       <div class="absolute z-50 mt-2 w-48 bg-white border border-pink-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 delay-100">
                           @foreach ($services as $service)
-                              <a href="#" class="block px-4 py-2 text-sm text-pink-700 hover:bg-pink-50 transition-colors duration-200">{{$service->nombre}}</a>
+                              <a href="servicio/{{$service->slug}}" class="block px-4 py-2 text-sm text-pink-700 hover:bg-pink-50 transition-colors duration-200">{{$service->nombre}}</a>
                           @endforeach
                        
                          

@@ -6,11 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, MustVerifyEmail;
 
     /**
      * The attributes that are mass assignable.
@@ -89,8 +91,8 @@ class User extends Authenticatable
      */
     public function getFotoPerfilUrlAttribute(): string
     {
-        if ($this->foto_perfil && \Storage::exists('public/' . $this->foto_perfil)) {
-            return \Storage::url($this->foto_perfil);
+        if ($this->foto_perfil && Storage::exists('public/' . $this->foto_perfil)) {
+            return Storage::url($this->foto_perfil);
         }
         
         // Foto por defecto basada en el género o iniciales

@@ -10,6 +10,7 @@ use App\Livewire\HomePage;
 use App\Livewire\MisCitas;
 use App\Livewire\MyProfilePage;
 use App\Livewire\ReservarCita;
+use App\Livewire\ServicioDetailPage;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,6 +18,7 @@ Route::get('/',HomePage::class)->name('homepage');
 Route::get('/sobre-mi',AboutMe::class);
 Route::get('/blog',BlogsPage::class);
 Route::get('/blog-detail/{slug}',BlogDetailPage::class);
+Route::get('/servicio/{slug}',ServicioDetailPage::class);
 Route::get('/contacto',ContactPage::class);
 Route::get('/reservar-cita',ReservarCita::class);
 Route::get('/perfil',MyProfilePage::class);

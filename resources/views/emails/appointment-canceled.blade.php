@@ -9,8 +9,12 @@
     <p style="font-size:16px; margin-bottom:20px;">Hola {{ $user->name }}, tu cita ha sido cancelada:</p>
 
     <div style="background:#fecaca; padding:20px; border-radius:15px; margin:20px 0; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);">
-        <p style="margin:5px 0; font-weight:bold; color:#991b1b;">Fecha: {{ $date }}</p>
-        <p style="margin:5px 0; font-weight:bold; color:#991b1b;">Hora: {{ $time }}</p>
+       <p style="margin:5px 0; font-weight:bold; color:#be185d;">
+            Fecha: {{ \Carbon\Carbon::parse($date)->format('d/m/Y') }}
+        </p>
+        <p style="margin:5px 0; font-weight:bold; color:#be185d;">
+            Hora: {{ \Carbon\Carbon::parse($time)->format('H:i') }}
+        </p>
     </div>
 
     <p style="font-size:14px; margin-bottom:20px; color:#7f1d1d;">Lamentamos los inconvenientes</p>

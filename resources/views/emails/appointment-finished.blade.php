@@ -9,8 +9,12 @@
     <p style="font-size:16px; margin-bottom:20px;">Hola {{ $user->name }}, tu cita ha sido finalizada</p>
 
     <div style="background:#fbcfe8; padding:20px; border-radius:15px; margin:20px 0; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);">
-        <p style="margin:5px 0; font-weight:bold; color:#be185d;">Fecha: {{ $date }}</p>
-        <p style="margin:5px 0; font-weight:bold; color:#be185d;">Hora: {{ $time }}</p>
+        <p style="margin:5px 0; font-weight:bold; color:#be185d;">
+            Fecha: {{ \Carbon\Carbon::parse($date)->format('d/m/Y') }}
+        </p>
+        <p style="margin:5px 0; font-weight:bold; color:#be185d;">
+            Hora: {{ \Carbon\Carbon::parse($time)->format('H:i') }}
+        </p>
     </div>
     
     <p style="font-size:14px; color:#ec4899;">¡Gracias por confiar en nosotros! 🧁</p>

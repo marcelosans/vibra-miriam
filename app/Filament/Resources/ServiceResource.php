@@ -37,9 +37,17 @@ class ServiceResource extends Resource
                             ->unique(ignoreRecord: true)
                             ->placeholder('Ingresa el nombre del servicio'),
 
-                         Forms\Components\TextInput::make('descripcion')
+                        Forms\Components\TextInput::make('slug')
+                            ->label('Slug')
+                            ->required()
+                            ->maxLength(255)
+                            ->unique(ignoreRecord: true)
+                            ->placeholder('Slug'),
+
+                         Forms\Components\TextArea::make('descripcion')
                             ->label('Descripción')
                             ->required()
+                            ->autosize()
                             ->maxLength(255)
                             ->unique(ignoreRecord: true)
                             ->placeholder('Ingresa la descripcion del servicio'),
